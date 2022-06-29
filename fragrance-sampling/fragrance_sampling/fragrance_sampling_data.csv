@@ -1,0 +1,59 @@
+house;fragrance;sample_ml;sample_cost;shipping_cost;amount;order_date;shipping_date;arrival_date;rating;bottle_ml;bottle_cost
+Maison Margiela;Soul of the Forest;2;4;3,9;1;21.08.18;31.08.18;;4;100;91
+Penhaligon's;Sartorial;2;4;3,9;1;21.08.18;31.08.18;;4;50;124
+Serge Lutens;La vierge de fer;2;5;3,9;1;21.08.18;31.08.18;;2;50;92
+Serge Lutens;Un bois vanille;2;5;3,9;1;21.08.18;31.08.18;;4;50;82
+Lalique;Encre Noire Pour Homme;2;4;3,9;1;14.10.18;17.10.18;;2;50;199
+Penhaligon's;Endymion;2;5;3,9;1;14.10.18;17.10.18;;4;50;124
+Serge Lutens;Chergui;2;5;3,9;1;14.10.18;17.10.18;;5;50;91
+The Vagabond Prince;Enchanted Forest;2;5;3,9;1;14.10.18;17.10.18;;2;100;199
+Tom Ford;Tobacco Vanille;2;9;3,9;1;14.10.18;17.10.18;;4;50;199
+Tom Ford;Noir;2;4;3,9;1;14.10.18;17.10.18;;3;50;199
+Ineke;Field Notes from Paris;2;4;3,9;1;08.12.18;14.12.18;;4;75;180
+Maison Margiela;By The Fireplace;2;4;3,9;1;08.12.18;14.12.18;;4;100;110
+Maison Margiela;Soul of the Forest;2;4;3,9;1;08.12.18;14.12.18;;4;100;92
+Penhaligon's;Opus 1870;2;5;3,9;1;08.12.18;14.12.18;;3;50;130
+Pro Fumum Roma;Arso;2;7;3,9;1;08.12.18;14.12.18;;4;100;118
+Serge Lutens;Dent de lait;2;5;3,9;1;08.12.18;14.12.18;;1;50;120
+Serge Lutens;Datura noir;2;5;3,9;1;08.12.18;14.12.18;;2;50;199
+Beaufort London;Fathom V;2;8;3,9;1;11.02.19;19.02.19;20.02.19;2;50;125
+Byredo;Gypsy Water;2;5;3,9;1;11.02.19;19.02.19;20.02.19;;50;89
+Maison Margiela;(untitled);2;4;3,9;1;11.02.19;19.02.19;20.02.19;;75;125
+Maison Margiela;Sailing Day;2;4;3,9;1;11.02.19;19.02.19;20.02.19;2;100;89
+Mancera;Cedrat Boise;2;4;3,9;1;11.02.19;19.02.19;20.02.19;4;60;219
+Tom Ford;Grey Vetiver;2;4;3,9;1;11.02.19;19.02.19;20.02.19;4;50;169
+Penhaligon's;Blasted Heath;2;5;3,9;1;28.03.19;29.03.19;30.03.19;4;50;120
+Tom Ford;Oud Minerale;2;9;3,9;1;28.03.19;29.03.19;30.03.19;5;50;90
+Tom Ford;Oud Wood;2;9;3,9;1;28.03.19;29.03.19;30.03.19;4;30;90
+Tom Ford;Vert de Bois;2;12;3,9;1;28.03.19;29.03.19;30.03.19;3;50;94
+Tom Ford;Vert d'Encens;2;12;3,9;1;28.03.19;29.03.19;30.03.19;3;50;94
+Tom Ford;Vert Boheme;2;12;3,9;1;28.03.19;29.03.19;30.03.19;1;50;124
+DS & Durga;Amber Teutonic;2;10;3,9;1;02.05.19;08.05.19;10.05.19;4;50;124
+Etat Libre d'Orange;Eloge du Traitre;2;4;3,9;1;02.05.19;08.05.19;10.05.19;2;50;124
+Etat Libre d'Orange;Fat Electrician;2;4;3,9;1;02.05.19;08.05.19;10.05.19;4;50;80
+Imaginary Authors;Cape Heartache;2;6;3,9;1;02.05.19;08.05.19;10.05.19;3;50;89
+Imaginary Authors;Memoirs of a Trespasser;2;6;3,9;1;02.05.19;08.05.19;10.05.19;4;50;124
+Serge Lutens;Vetiver Oriental;2;5;3,9;1;02.05.19;08.05.19;10.05.19;3;50;104
+Tom Ford;Tobacco Oud;2;6;3,28;1;26.05.19;13.06.19;15.06.19;;;
+Montale;Aoud Musk;2;5;3,28;1;26.05.19;13.06.19;15.06.19;;;
+Tom Ford;Soleil Blanc;2;7,56;3,28;1;26.05.19;13.06.19;15.06.19;4;;
+Masque Milano;Montecristo;2;5;3,28;1;26.05.19;13.06.19;15.06.19;;;
+DS & Durga;El Cosmico;2;10;3,28;1;26.05.19;13.06.19;15.06.19;;;
+Maison Margiela;Beach Walk;2;9;3,28;1;26.05.19;13.06.19;15.06.19;4;;
+Penhaligon's;Juniper Sling;2;6;3,9;1;24.06.19;04.07.19;08.07.19;4;;
+Imaginary Authors;Every Storm A Serenade;2;6;3,9;1;24.06.19;04.07.19;08.07.19;4;;
+Etat Libre d'Orange;Hermann a mes cotes me paraissait une ombre;2;4;3,9;1;24.06.19;04.07.19;08.07.19;4;;
+Penhaligon's;Endymion;2;5;3,9;1;24.06.19;04.07.19;08.07.19;4;;
+Penhaligon's;Endymion Concentree;2;5;3,9;1;24.06.19;04.07.19;08.07.19;3;;
+Penhaligon's;Blasted Bloom;2;6;3,9;1;24.06.19;04.07.19;08.07.19;4;;
+Frederic Malle;French Lover;2;6;3,9;1;08.09.19;17.09.19;19.09.19;;;
+Frederic Malle;Musc Ravageaur;2;6;3,9;1;08.09.19;17.09.19;19.09.19;4;30;110
+Tom Ford;Black Orchid;2;5;3,9;1;08.09.19;17.09.19;19.09.19;1;30;110
+Maison Margiela;Jazz Club;2;4;3,9;1;08.09.19;17.09.19;19.09.19;3;100;128
+DS & Durga;Burning Barbershop;2;10;3,9;1;08.09.19;17.09.19;19.09.19;5;100;92
+Montale;Black Aoud;2;4;3,9;1;08.09.19;17.09.19;19.09.19;;50;169
+Montale;Greyland;2;4;3,9;1;16.11.19;25.11.19;27.11.19;2;110;100
+Montale;Honey Aoud;2;4;3,9;1;16.11.19;25.11.19;27.11.19;2;139;100
+Montale;Cuir dArabie;2;4;3,9;1;16.11.19;25.11.19;27.11.19;;128;100
+Histoire de Parfums;Ernest Hemingway;2;4;3,9;1;16.11.19;25.11.19;27.11.19;4;120;155
+Imaginary Authors;A City on Fire;2;6;3,9;1;16.11.19;25.11.19;27.11.19;3;50;94
