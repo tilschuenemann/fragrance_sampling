@@ -12,6 +12,13 @@ plotly = "^5.9.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pyproject-flake8 = "^0.0.1-alpha.4"
+
+[tool.flake8]
+max-line-length = 100
+max-complexity = 15
+statistics = "True"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
