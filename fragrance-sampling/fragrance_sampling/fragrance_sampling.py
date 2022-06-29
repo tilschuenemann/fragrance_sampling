@@ -134,7 +134,11 @@ def plot(df):
 
     order_rating_data = df.groupby(["order_date"], as_index=False).mean("rating")
     order_rating_plot = px.bar(
-        order_rating_data, x="order_date", y="rating", title="Rating per Order"
+        order_rating_data,
+        x="order_date",
+        y="rating",
+        title="Rating per Order",
+        range_y=[0, 5.5],
     )
     order_rating_plot = style_chart(order_rating_plot, "vbar")
 
@@ -145,6 +149,7 @@ def plot(df):
         house_rating_data,
         x="rating",
         y="house",
+        range_x=[0, 5.5],
         orientation="h",
         title="Average Rating per House",
     )
