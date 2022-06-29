@@ -2,6 +2,15 @@ import pandas as pd
 from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 
+# dracula:
+color_scheme = {
+    "bg": "#282A36",
+    "fg": "#F8F8F2",
+    "red": "#FF5555",
+    "green": "#50FA7B",
+    "hl": "#8BE9FD",
+}
+
 
 app = Dash(__name__)
 app.layout = html.Div(
@@ -23,7 +32,12 @@ app.layout = html.Div(
         dcc.Graph(id="fragrances_house_plot"),
         dcc.Graph(id="hist_plot"),
         dcc.Store(id="df"),
-    ]
+    ],
+    style={
+        "padding": "50px 50px 50px 100px",
+        "backgroundColor": color_scheme["bg"],
+        "color": color_scheme["fg"],
+    },
 )
 
 
@@ -71,6 +85,28 @@ def calculate_kpis(df):
     return html.Div(div_list)
 
 
+def style_chart(fig, style):
+    if style == "vbar":
+        fig.update_xaxes(showgrid=False, gridcolor=color_scheme["fg"], zeroline=False)
+        fig.update_yaxes(showgrid=True, gridcolor=color_scheme["fg"], zeroline=False)
+
+    elif style == "bar":
+        fig.update_xaxes(showgrid=True, gridcolor=color_scheme["fg"], zeroline=False)
+        fig.update_yaxes(showgrid=False, gridcolor=color_scheme["fg"], zeroline=False)
+
+    fig.update_layout(
+        font_color=color_scheme["fg"],
+        title_font_color=color_scheme["fg"],
+        legend_title_font_color=color_scheme["fg"],
+        paper_bgcolor="rgba(0, 0, 0, 0)",
+        plot_bgcolor="rgba(0, 0, 0, 0)",
+    )
+
+    fig.update_traces(marker_color=color_scheme["hl"])
+
+    return fig
+
+
 @app.callback(
     Output("order_cost_plot", "figure"),
     Output("order_amount_plot", "figure"),
@@ -87,16 +123,20 @@ def plot(df):
     order_cost_plot = px.bar(
         order_cost_data, x="order_date", y="sample_cost", title="Cost per Order"
     )
+    order_cost_plot = style_chart(order_cost_plot, "vbar")
+    order_cost_plot.update_layout(yaxis_ticksuffix="€", yaxis_tickformat=",.")
 
     order_amount_data = df.groupby(["order_date"], as_index=False).sum("amount")
     order_amount_plot = px.bar(
         order_amount_data, x="order_date", y="amount", title="Fragrances per Order"
     )
+    order_amount_plot = style_chart(order_amount_plot, "vbar")
 
     order_rating_data = df.groupby(["order_date"], as_index=False).mean("rating")
     order_rating_plot = px.bar(
         order_rating_data, x="order_date", y="rating", title="Rating per Order"
     )
+    order_rating_plot = style_chart(order_rating_plot, "vbar")
 
     house_rating_data = (
         df.groupby(["house"], as_index=False).mean("rating").sort_values("rating")
@@ -108,6 +148,7 @@ def plot(df):
         orientation="h",
         title="Average Rating per House",
     )
+    house_rating_plot = style_chart(house_rating_plot, "bar")
 
     fragrances_house_data = (
         df.groupby(["house"], as_index=False).size().sort_values("size")
@@ -119,11 +160,11 @@ def plot(df):
         title="Fragrances per House",
         orientation="h",
     )
+    fragrances_house_plot = style_chart(fragrances_house_plot, "bar")
 
     hist_data = df.groupby(["rating"], as_index=False).size()
-    hist_plot = px.histogram(
-        hist_data, x="rating", y="size", title="Rating Distribution"
-    )
+    hist_plot = px.bar(hist_data, x="rating", y="size", title="Rating Distribution")
+    hist_plot = style_chart(hist_plot, "vbar")
 
     return (
         order_cost_plot,
