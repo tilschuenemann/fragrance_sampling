@@ -51,7 +51,7 @@ def load_data(n_intervals):
     )
 
     for date_col in ["order_date", "arrival_date", "shipping_date"]:
-        df[date_col] = pd.to_datetime(df[date_col], format="%d.%m.%y")
+        df[date_col] = pd.to_datetime(df[date_col], format="%Y-%m-%d")
 
     df["sample_cost_ml"] = df["sample_cost"] / df["sample_ml"]
     df["bottle_cost_ml"] = df["bottle_cost"] / df["bottle_ml"]
