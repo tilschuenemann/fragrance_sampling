@@ -1,1 +1,1 @@
-web: gunicorn frragrance_sampling.app:server
+web: gunicorn fragrance_sampling.app:server
