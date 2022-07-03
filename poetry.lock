@@ -138,6 +138,20 @@ brotli = "*"
 flask = "*"
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "itsdangerous"
 version = "2.1.2"
 description = "Safely pass data to untrusted environments and back."
@@ -411,7 +425,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "58145d2f58a61543b60e4daa571006a132c5aa657fad7a26014f6acb5bddbcc8"
+content-hash = "8f25ced655e851371e8521eb9fca690aa484c3aadfd27b30a2f1c49f95f1e20d"
 
 [metadata.files]
 atomicwrites = [
@@ -521,6 +535,10 @@ flask = [
 flask-compress = [
     {file = "Flask-Compress-1.12.tar.gz", hash = "sha256:e2159499f39d618a4d56ba0484e7b58b57956b9a2c6d3510f095f5bb14b7afc5"},
     {file = "Flask_Compress-1.12-py3-none-any.whl", hash = "sha256:9f4e40211755e86f85e5eb7d414856ef1e8751912caa78d62853169400335f0c"},
+]
+gunicorn = [
+    {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
+    {file = "gunicorn-20.1.0.tar.gz", hash = "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"},
 ]
 itsdangerous = [
     {file = "itsdangerous-2.1.2-py3-none-any.whl", hash = "sha256:2c2349112351b88699d8d4b6b075022c0808887cb7ad10069318a8b0bc88db44"},

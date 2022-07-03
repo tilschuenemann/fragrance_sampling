@@ -12,25 +12,36 @@ color_scheme = {
 }
 
 
-app = Dash(__name__)
+app = Dash(
+    __name__,
+    external_stylesheets=[
+        "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    ],
+)
 app.layout = html.Div(
     [
-        html.H1("fragrance sampling"),
+        html.H1("fragrance sampling", className="text-4xl"),
         dcc.Interval(
             id="load_interval",
             n_intervals=0,
             max_intervals=0,  # <-- only run once
             interval=1,
         ),
-        html.H4("KPIs"),
+        html.H4("KPIs", className="text-3xl"),
         html.Div(id="kpis"),
-        html.H4("Orders"),
-        dcc.Graph(id="order_cost_plot"),
-        dcc.Graph(id="order_amount_plot"),
-        dcc.Graph(id="order_rating_plot"),
+        html.H4("Orders", className="text-3xl"),
+        html.Div(
+            [
+                dcc.Graph(id="order_cost_plot"),
+                dcc.Graph(id="order_amount_plot"),
+                dcc.Graph(id="order_rating_plot"),
+            ],
+            className="grid grid-cols-3 grid-row-1 gap-4",
+        ),
         dcc.Graph(id="house_rating_plot"),
         dcc.Graph(id="fragrances_house_plot"),
         dcc.Graph(id="hist_plot"),
+        dcc.Graph(id="regr_plot"),
         dcc.Store(id="df"),
     ],
     style={
@@ -80,9 +91,14 @@ def calculate_kpis(df):
 
     div_list = []
     for k, v in kpis.items():
-        div_list.append(html.Div([f"{k}: {v:.2f}"]))
+        div_list.append(
+            html.Div(
+                [html.Span(f"{k}"), html.Br(), html.Span(f"{v:.2f}")],
+                className="block w-48 h-24 grid place-content-center rounded-lg bg-gray-500 shadow-lg",
+            )
+        )
 
-    return html.Div(div_list)
+    return html.Div(div_list, className="grid gap-2 grid-cols-4 grid-rows-2")
 
 
 def style_chart(fig, style):
@@ -114,6 +130,7 @@ def style_chart(fig, style):
     Output("house_rating_plot", "figure"),
     Output("fragrances_house_plot", "figure"),
     Output("hist_plot", "figure"),
+    Output("regr_plot", "figure"),
     Input("df", "data"),
 )
 def plot(df):
@@ -171,6 +188,8 @@ def plot(df):
     hist_plot = px.bar(hist_data, x="rating", y="size", title="Rating Distribution")
     hist_plot = style_chart(hist_plot, "vbar")
 
+    regr_plot = px.violin(df, y="bottle_cost_ml", x="rating", points="all", box=True)
+
     return (
         order_cost_plot,
         order_amount_plot,
@@ -178,6 +197,7 @@ def plot(df):
         house_rating_plot,
         fragrances_house_plot,
         hist_plot,
+        regr_plot,
     )
 
 
