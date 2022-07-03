@@ -44,7 +44,6 @@ app.layout = html.Div(
         dcc.Graph(id="house_rating_plot"),
         dcc.Graph(id="fragrances_house_plot"),
         dcc.Graph(id="hist_plot"),
-        dcc.Graph(id="regr_plot"),
         dcc.Store(id="df"),
     ],
     style={
@@ -133,7 +132,6 @@ def style_chart(fig, style):
     Output("house_rating_plot", "figure"),
     Output("fragrances_house_plot", "figure"),
     Output("hist_plot", "figure"),
-    Output("regr_plot", "figure"),
     Input("df", "data"),
 )
 def plot(df):
@@ -191,8 +189,6 @@ def plot(df):
     hist_plot = px.bar(hist_data, x="rating", y="size", title="Rating Distribution")
     hist_plot = style_chart(hist_plot, "vbar")
 
-    regr_plot = px.violin(df, y="bottle_cost_ml", x="rating", points="all", box=True)
-
     return (
         order_cost_plot,
         order_amount_plot,
@@ -200,7 +196,6 @@ def plot(df):
         house_rating_plot,
         fragrances_house_plot,
         hist_plot,
-        regr_plot,
     )
 
 
