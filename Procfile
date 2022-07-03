@@ -1,1 +1,1 @@
-web: gunicorn frragrance_sampling:server
+web: gunicorn frragrance_sampling.app:server
