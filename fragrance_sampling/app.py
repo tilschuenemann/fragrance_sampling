@@ -18,6 +18,9 @@ app = Dash(
         "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
     ],
 )
+
+server = app.server
+
 app.layout = html.Div(
     [
         html.H1("fragrance sampling", className="text-4xl"),
